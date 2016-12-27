@@ -1,0 +1,49 @@
+
+<app-header></app-header>
+
+
+<form (ngSubmit)="addBooktable()">
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter table id:</span>
+  <td><input type="number" name="table_id" [(ngModel)]="table_id"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter fk_user email:</span>
+  <td><input type="text" name="fk_user_email" [(ngModel)]="fk_user_email" /></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter fk_rest id:</span>
+  <td><input type="number" name="fk_rest_id" [(ngModel)]="fk_rest_id" /></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter date:</span>
+  <td><input type="text" name="date" [(ngModel)]="date"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter no of people:</span>
+  <td><input type="number" name="no_of_people" [(ngModel)]="no_of_people"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter time:</span>
+  <td><input type="text" name="time" [(ngModel)]="time"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter additional request:</span>
+  <td><input type="text" name="additional_request" [(ngModel)]="additional_request"/></td>
+</div>
+<br/>
+
+<button type="submit">add Booktable</button>
+</form>
