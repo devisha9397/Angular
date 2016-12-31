@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="row"> 
+  <!--<div class="col-md-8 col-md-offset-11">
+<a routerLink="/addbooktables"><button  type="button" class="btn btn-primary">
+<span class="glyphicon glyphicon-plus-sign" ></span></button></a>
+</div>-->
+<div class="col-md-8 col-md-offset-11">
+<button (click)='addRestowner(item)' type="button" class="btn btn-primary">
+<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
+</div>
+
+</div>
+<table class="table">
+    <tr>
+     <th>Owner email Id</th>
+      <th>Rest_id</th>
+      <th>Owner name</th>
+      <th>Owner mob no.</th>
+      </tr>
+    <tr *ngFor="let item of allRestowner">
+  <td>{{item.owner_email}}</td>
+  <td>{{item.fk_rest_id}}</td>
+    <td>{{item.rest_owner_name}}</td>
+  <td>{{item.owner_mob_no}}</td>
+
+<td><button (click)='deleteRestowner(item)' type="button" class="btn btn-danger">
+<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+
+   </tr>
+  </table>

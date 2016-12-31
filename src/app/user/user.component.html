@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="row"> 
+  <!--<div class="col-md-8 col-md-offset-11">
+<a routerLink="/addbooktables"><button  type="button" class="btn btn-primary">
+<span class="glyphicon glyphicon-plus-sign" ></span></button></a>
+</div>-->
+<!--<div class="col-md-8 col-md-offset-11">
+<button (click)='addUser(item)' type="button" class="btn btn-primary">
+<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
+</div>-->
+
+</div>
+<table class="table">
+    <tr>
+     <th>User email</th>
+      <th>User name</th>
+      <th>Address</th>
+      <th>Mobile no</th>
+      <th>Gender</th>
+      <th>City</th>
+      <th>Profile pic</th>
+      <th>Date of bitrh</th>
+      </tr>
+    <tr *ngFor="let item of allUser">
+  <td>{{item.user_email}}</td>
+  <td>{{item.user_name}}</td>
+    <td>{{item.address}}</td>
+  <td>{{item.mobile_no}}</td>
+  <td>{{item.gender}}</td>
+  <td>{{item.city}}</td>
+  <td>{{item.pro_pic}}</td>
+  <td>{{item.DOB}}</td>
+ 
+<td><button (click)='deleteUser(item)' type="button" class="btn btn-danger">
+<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+
+   </tr>
+  </table>

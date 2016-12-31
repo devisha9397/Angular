@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="row"> 
+  <!--<div class="col-md-8 col-md-offset-11">
+<a routerLink="/addbooktables"><button  type="button" class="btn btn-primary">
+<span class="glyphicon glyphicon-plus-sign" ></span></button></a>
+</div>-->
+<div class="col-md-8 col-md-offset-11">
+<button (click)='addCategory(item)' type="button" class="btn btn-primary">
+<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
+</div>
+
+</div>
+<table class="table">
+    <tr>
+     <th>Category id</th>
+      <th>Restaurant name</th>
+      <th>Cusines</th>
+      <th>Cost</th>
+      <th>Hours</th>
+      <th>Known for</th>
+      <th>Spotlight</th>
+      </tr>
+    <tr *ngFor="let item of allCategory">
+  <td>{{item.cat_id}}</td>
+  <td>{{item.rest_name}}</td>
+    <td>{{item.cusines}}</td>
+  <td>{{item.cost}}</td>
+  <td>{{item.hours}}</td>
+  <td>{{item.known_for}}</td>
+  <td>{{item.spotlight}}</td>
+ 
+<td><button (click)='deleteCategory(item)' type="button" class="btn btn-danger">
+<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+
+   </tr>
+  </table>

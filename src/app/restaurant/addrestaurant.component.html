@@ -1,0 +1,100 @@
+
+<app-header></app-header>
+
+
+<form (ngSubmit)="addRestaurant()" #addform="ngForm">
+  <div class="col-md-7 col-md-offset-3">
+    <div class="panel panel-primary">
+  <div class="panel-body">
+    <h2 *ngIf="rest_id==0" >Add Restaurant Here</h2>
+  </div>
+<!--<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter table id:</span>
+  <td><input type="number" name="table_id" [(ngModel)]="table_id"/></td>
+</div>
+<br/>-->
+<div class="container-fluid">
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter fk_owner email:</span>
+  <td><input type="text" name="fk_owner_email" [(ngModel)]="fk_owner_email" /></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter fk_cat id:</span>
+  <td><input type="number" name="fk_cat_id" [(ngModel)]="fk_cat_id" /></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter fk_review id:</span>
+  <td><input type="number" name="fk_review_id" [(ngModel)]="fk_review_id"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter restaurant name:</span>
+  <td><input type="text" name="rest_name" [(ngModel)]="rest_name"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter restaurant address:</span>
+  <td><input type="text" name="rest_add" [(ngModel)]="rest_add"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter pincode:</span>
+  <td><input type="number" name="pincode" [(ngModel)]="pincode"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter restaurant contact no:</span>
+  <td><input type="text" name="rest_number" [(ngModel)]="rest_number"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter restaurant email:</span>
+  <td><input type="text" name="rest_email" [(ngModel)]="rest_email"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Restaurant opening status:</span>
+  <td><input type="text" name="opening_status" [(ngModel)]="opening_status"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Main photo of restaurant:</span>
+  <td><input type="text" name="main_photo" [(ngModel)]="main_photo"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter menu photo:</span>
+  <td><input type="text" name="menu_photo" [(ngModel)]="menu_photo"/></td>
+</div>
+<br/>
+
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter other photos:</span>
+  <td><input type="text" name="other_photos" [(ngModel)]="other_photos"/></td>
+</div>
+<br/>
+
+<div class="col-md-offset-5">
+<div class="btn-group">
+  <button type="submit" [disabled]="!addform.form.valid" class="btn btn-primary">
+    add Restaurant
+  </button>
+  </div></div>
+  <br/><br/>
+</div>
+</div>
+</div>
+</form>

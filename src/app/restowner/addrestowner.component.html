@@ -1,0 +1,51 @@
+
+<app-header></app-header>
+
+
+<form (ngSubmit)="addRestowner()" #addform="ngForm">
+  <div class="col-md-7 col-md-offset-3">
+    <div class="panel panel-primary">
+  <div class="panel-body">
+    <h2 *ngIf="owner_email==0" >Add Restaurant owner Here</h2>
+  </div>
+<!--<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter table id:</span>
+  <td><input type="number" name="table_id" [(ngModel)]="table_id"/></td>
+</div>
+<br/>-->
+<div class="container-fluid">
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter owner email:</span>
+  <td><input type="text" name="owner_email" [(ngModel)]="owner_email" /></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter fk_rest id:</span>
+  <td><input type="number" name="fk_rest_id" [(ngModel)]="fk_rest_id" /></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter Owner name:</span>
+  <td><input type="text" name="rest_owner_name" [(ngModel)]="rest_owner_name"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter Owner mobile no:</span>
+  <td><input type="text" name="owner_mob_no" [(ngModel)]="owner_mob_no"/></td>
+</div>
+<br/>
+<div class="col-md-offset-5">
+<div class="btn-group">
+  <button type="submit" [disabled]="!addform.form.valid" class="btn btn-primary">
+    add Booktable
+  </button>
+  </div></div>
+  <br/><br/>
+</div>
+</div>
+</div>
+
+</form>

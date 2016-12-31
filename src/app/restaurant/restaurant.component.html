@@ -1,0 +1,49 @@
+
+<app-header></app-header>
+<div class="row"> 
+  <!--<div class="col-md-8 col-md-offset-11">
+<a routerLink="/addbooktables"><button  type="button" class="btn btn-primary">
+<span class="glyphicon glyphicon-plus-sign" ></span></button></a>
+</div>-->
+<div class="col-md-8 col-md-offset-11">
+<button (click)='addRestaurant(item)' type="button" class="btn btn-primary">
+<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
+</div>
+
+</div>
+<table class="table">
+    <tr>
+     <th>Restaurant id</th>
+      <th>Owner_email</th>
+      <th>Cat_id</th>
+      <th>Review_id</th>
+      <th>Restaurant name</th>
+       <th>Restaurant address</th>
+      <th>Pincode</th>
+      <th>Restaurant contact</th>
+      <th>Restaurant email</th>
+      <th>Opening status</th>
+      <th>Main photo</th>
+      <th>Menu photos</th>
+      <th>Other photos</th>
+      </tr>
+    <tr *ngFor="let item of allrest">
+  <td>{{item.rest_id}}</td>
+  <td>{{item.fk_owner_email}}</td>
+    <td>{{item.fk_cat_id}}</td>
+  <td>{{item.fk_review_iddate}}</td>
+  <td>{{item.rest_name}}</td>
+  <td>{{item.rest_add}}</td>
+  <td>{{item.pincode}}</td>
+  <td>{{item.rest_number}}</td>
+  <td>{{item.rest_email}}</td>
+  <td>{{item.opening_status}}</td>
+  <td>{{item.main_photo}}</td>
+  <td>{{item.menu_photo}}</td>
+  <td>{{item.other_photos}}</td>
+ 
+<td><button (click)='deleteRestaurant(item)' type="button" class="btn btn-danger">
+<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+
+   </tr>
+  </table>

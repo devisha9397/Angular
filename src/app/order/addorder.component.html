@@ -1,0 +1,82 @@
+<app-header></app-header>
+ 
+ 
+<form (ngSubmit)="addOrder(item)" #addform="ngForm"> 
+  <div class="col-md-7 col-md-offset-3">
+    <div class="panel panel-primary">
+  <div class="panel-body">
+    <h2 *ngIf="order_id==0" >Add Order Here</h2>
+  </div>
+<!--<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter table id:</span>
+  <td><input type="number" name="table_id" [(ngModel)]="table_id"/></td>
+</div>
+<br/>--> 
+<div class="container-fluid">
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Select Restaurant name:</span>
+ <select class="form-control" id="fk_rest_id" 
+[(ngModel)]="fk_rest_id" name="fk_rest_id"
+required>
+<option *ngFor="let s of allRest" [value]="s.rest_id">{{s.rest_name}}</option>
+</select> 
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter User email:</span>
+  <td><input type="text" name="fk_user_email" [(ngModel)]="fk_user_email" /></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Select Item name:</span>
+  <select class="form-control" id="fk_item_id" 
+[(ngModel)]="fk_item_id" name="fk_item_id"
+required>
+<option *ngFor="let s of allItem" [value]="s.item_id">{{s.item_name}}</option>
+</select> 
+</div>
+<br/>
+ 
+<!--<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter Item name:</span>
+  <td><input type="text" name="item_name" [(ngModel)]="item_name"/></td>
+</div>
+<br/>-->
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter Quantity:</span>
+  <td><input type="number" name="quantity" [(ngModel)]="quantity"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter Total amount:</span>
+  <td><input type="number" name="total_amount" [(ngModel)]="total_amount"/></td>
+</div>
+<br/>
+
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter Date of order:</span>
+  <td><input type="text" name="date_of_order" [(ngModel)]="date_of_order"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter Delivery area:</span>
+  <td><input type="text" name="delivery_area" [(ngModel)]="delivery_area"/></td>
+</div>
+<br/>
+<div class="col-md-offset-5">
+<div class="btn-group">
+  <button type="submit"  [disabled]="!addform.form.valid" class="btn btn-primary">
+    add Order
+  </button>
+  </div></div>
+  <br/><br/>
+</div>
+</div>
+</div>
+</form>

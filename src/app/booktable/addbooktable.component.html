@@ -1,23 +1,39 @@
 
 <app-header></app-header>
 
+  
+ 
+<form (ngSubmit)="addBooktable()" #addform="ngForm">
 
-<form (ngSubmit)="addBooktable()">
-<div class="input-group">
+  <div class="col-md-7 col-md-offset-3">
+    <div class="panel panel-primary">
+  <div class="panel-body">
+    <h2 *ngIf="table_id==0" >Add Booktable Here</h2>
+  </div>
+  
+<!--<div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter table id:</span>
   <td><input type="number" name="table_id" [(ngModel)]="table_id"/></td>
 </div>
-<br/>
-
+<br/>-->
+ 
+    
+<!--<h2 *ngIf="table_id!=0" >Add Booktable Here</h2>-->
+<div class="container-fluid">
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Enter fk_user email:</span>
+  <span class="input-group-addon" id="basic-addon1">Enter user email:</span>
   <td><input type="text" name="fk_user_email" [(ngModel)]="fk_user_email" /></td>
 </div>
 <br/>
-
+ 
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Enter fk_rest id:</span>
-  <td><input type="number" name="fk_rest_id" [(ngModel)]="fk_rest_id" /></td>
+  <span class="input-group-addon" id="basic-addon1">Select Restaurant:</span>
+  <!--<input type="number" name="fk_rest_id" [(ngModel)]="fk_rest_id" />-->
+  <select class="form-control" id="fk_rest_id" 
+[(ngModel)]="fk_rest_id" name="fk_rest_id"
+required>
+<option *ngFor="let s of allRest" [value]="s.rest_id">{{s.rest_name}}</option>
+</select> 
 </div>
 <br/>
 
@@ -36,8 +52,8 @@
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter time:</span>
   <td><input type="text" name="time" [(ngModel)]="time"/></td>
-</div>
-<br/>
+</div> 
+<br/> 
 
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter additional request:</span>
@@ -45,5 +61,14 @@
 </div>
 <br/>
 
-<button type="submit">add Booktable</button>
+<div class="col-md-offset-5">
+<div class="btn-group">
+  <button type="submit" [disabled]="!addform.form.valid" class="btn btn-primary">
+    add Booktable
+  </button>
+  </div></div>
+  <br/><br/>
+</div>
+</div>
+</div>
 </form>

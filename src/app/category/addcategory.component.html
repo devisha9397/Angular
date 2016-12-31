@@ -1,0 +1,87 @@
+
+<app-header></app-header>
+
+<form (ngSubmit)="addCategory()" #addform="ngForm">
+
+    <div class="col-md-7 col-md-offset-3">
+    <div class="panel panel-primary">
+    <div class="panel-body">
+    <h2 *ngIf="cat_id==0" >Add Category Here</h2>
+    </div>
+
+    <!--<div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Enter table id:</span>
+    <td><input type="number" name="table_id" [(ngModel)]="table_id"/></td>
+    </div>
+    <br/>-->  
+
+  <div class="container-fluid">
+  <div class="input-group"> 
+  <span class="input-group-addon" id="basic-addon1">Select Restaurant name:</span>
+   <select class="form-control" id="fk_rest_id" 
+  [(ngModel)]="fk_rest_id" name="fk_rest_id"
+  required>
+<option *ngFor="let s of allRest" [value]="s.rest_id">{{s.rest_name}}</option>
+</select>
+  </div>
+<!--  <div [hidden]="fk_rest_id.valid" class="alert alert-danger">
+ 
+      Task Id is required
+  </div>-->
+  <br/>
+
+  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter cusines:</span>
+  <td><input type="text" name="cusines" [(ngModel)]="cusines" /></td>
+  </div>
+
+<!--<div [hidden]="cusines.valid || cusines.pristine" class="alert alert-danger">
+   Cusines is required
+ </div>-->
+  <br/>
+
+  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter cost:</span>
+  <td><input type="number" name="cost" [(ngModel)]="cost"/></td>
+  </div>
+
+<!--<div [hidden]="cost.valid || cost.pristine" class="alert alert-danger">
+ 
+Cost is required
+ 
+</div>-->
+  <br/>
+
+  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter hours:</span>
+  <td><input type="text" name="hours" [(ngModel)]="hours"/></td>
+  </div>
+
+<!--<div [hidden]="hours.valid || hours.pristine" class="alert alert-danger">
+ 
+Hours are required
+ </div>-->
+  <br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter known_for:</span>
+  <td><input type="text" name="known_for" [(ngModel)]="known_for"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter spotlight:</span>
+  <td><input type="text" name="spotlight" [(ngModel)]="spotlight"/></td>
+</div>
+<br/>
+
+<div class="col-md-offset-5">
+<div class="btn-group">
+<button type="submit" [disabled]="!addform.form.valid" class="btn btn-primary">
+    add Category
+  </button></div></div>
+  <br/><br/>
+  </div>
+    </div>
+  </div>
+</form>
