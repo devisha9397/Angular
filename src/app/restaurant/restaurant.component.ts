@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
 import { Router } from '@angular/router';
 import { RestaurantModel } from '../shared/restaurant-model';
+//import { RestaurantModel } from '../shared/restaurant-model';
 import { RestaurantdataService } from '../shared/restaurantdata.service';
 
 @Component({
@@ -45,11 +46,16 @@ allrest:RestaurantModel[]=[];
       }
   );
 
+
   }
 
-  addRestaurant(item:RestaurantModel)
+  addRestaurant()
   {
     this._router.navigate(['/addrestaurants',0]);//////
+  }
+updateRestaurant(item:RestaurantModel) 
+  {
+       this._router.navigate(['/addrestaurants',item.rest_id]);
   }
 
 }

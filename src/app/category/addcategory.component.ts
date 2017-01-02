@@ -39,7 +39,7 @@ public category:CategoryModel[]=[];
         this.allRest=data;
       }
     );
-  if(this.cat_id==0)
+  if(this.cat_id!=0)
   {
   this._category_data.getCategorybyid(this.cat_id).subscribe(
 (data:CategoryModel[])=>{
@@ -57,7 +57,7 @@ public category:CategoryModel[]=[];
 
   );
   }
-  }
+  } 
 
   addCategory(){
 
@@ -81,6 +81,22 @@ public category:CategoryModel[]=[];
 }
 else{
   //edit
+
+  this._category_data.updateCategory(new CategoryModel(this.cat_id,this.fk_rest_id,this.cusines,this.cost,this.hours,this.known_for,this.spotlight))
+    .subscribe(
+      (data:any)=>{
+
+         console.log(data); 
+         this._router.navigate(['/categories']); 
+    },
+    function(error){
+
+      alert(error);
+    },
+    function(){
+      alert('Updated');
+      }
+    );
 }
   }
 }

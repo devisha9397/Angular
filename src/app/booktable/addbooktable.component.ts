@@ -46,9 +46,10 @@ private additional_request:string;
         this.allRest=data;
       }
     );////aa bdha ma add krvu
-  if(this.table_id==0)
-  {
-  this._book_data.getBooktablebyid(this.table_id).subscribe(
+  
+  if(this.table_id!=0){
+
+    this._book_data.getBooktablebyid(this.table_id).subscribe(
 (data:BooktableModel[])=>{
 
   this.book=data;
@@ -63,8 +64,9 @@ private additional_request:string;
 }
 
   );
-  }
-  }
+
+  }//aa bdha ma edit ma add kevu
+  } 
 
   addBooktable(){
     if(this.table_id==0) 
@@ -89,6 +91,22 @@ private additional_request:string;
 else
 {
   //edit
+
+  this._book_data.updateBooktable(new BooktableModel(this.table_id,this.fk_user_email,this.fk_rest_id,this.date,this.no_of_people,this.time,this.additional_request))
+    .subscribe(
+      (data:any)=>{
+
+         console.log(data); 
+         this._router.navigate(['/booktables']); 
+    },
+    function(error){
+
+      alert(error);
+    },
+    function(){
+      alert('Updated');
+      }
+    );
 }
   }
 }

@@ -17,6 +17,7 @@ export class MenuitemComponent implements OnInit {
 
   ngOnInit() {
 
+
          this._menuitem_data.getBooktablejoin().subscribe(
 
       (data:MenuitemModel1[])=>{
@@ -49,8 +50,13 @@ export class MenuitemComponent implements OnInit {
 
   }
 
-  addMenuitem(item:MenuitemModel1)
+  addMenuitem()
   {
     this._router.navigate(['/addmenuitems',0]);
+  }
+
+  updateMenuitem(item:MenuitemModel1)
+  {
+       this._router.navigate(['/addmenuitems',item.item_id]);
   }
 }

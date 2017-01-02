@@ -28,6 +28,7 @@ private flag:number;
 private date_of_order:string;
 private delivery_area:string;
 
+
 public order:OrderModel[]=[];
   constructor(public _order_data:OrderdataService,public _rest_data:RestaurantdataService,public _menuitem_data:MenuitemdataService,public _router:Router,public _acrouter:ActivatedRoute) { }
 
@@ -57,6 +58,8 @@ public order:OrderModel[]=[];
 (data:OrderModel[])=>{
 
   this.order=data;
+
+  
   
   this.order_id=this.order[0].order_id;
   this.fk_rest_id=this.order[0].fk_rest_id;
@@ -76,8 +79,7 @@ public order:OrderModel[]=[];
   }
 
 addOrder(){
-if(this.order_id==0)
-{
+
   this._order_data.addOrder(new OrderModel(this.order_id,this.fk_rest_id,this.fk_user_email,this.fk_item_id,this.item_name,this.quantity,this.total_amount,this.flag,this.date_of_order,this.delivery_area)).subscribe(
     (data:any)=>{
       alert('added');
@@ -93,9 +95,6 @@ if(this.order_id==0)
       console.log("order add");
     }
   );
-}
-else{
-  //edit
-}
+
 }
 }

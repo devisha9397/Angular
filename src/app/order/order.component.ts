@@ -48,9 +48,11 @@ deleteOrder(item:OrderModel1){
 
   }
 
-addOrder(item:OrderModel1)
+
+addOrder()
   {
     this._router.navigate(['/addorders',0]);
   }
 
+ 
 }

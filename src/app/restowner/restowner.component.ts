@@ -46,10 +46,16 @@ export class RestownerComponent implements OnInit {
       }
   );
 
+
   }
-   addRestowner(item:RestownerModel)
+   addRestowner()
   {
-    this._router.navigate(['/addrestowners',0]);///////
+    this._router.navigate(['/addrestowners','0']);
+  }
+ 
+ updateRestowner(item:RestownerModel)
+  {
+       this._router.navigate(['/addrestowners',item.owner_email]);
   }
 
 }

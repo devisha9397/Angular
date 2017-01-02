@@ -6,7 +6,8 @@
     <div class="panel panel-primary">
   <div class="panel-body">
     <h2 *ngIf="order_id==0" >Add Order Here</h2>
-  </div>
+       </div>
+
 <!--<div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter table id:</span>
   <td><input type="number" name="table_id" [(ngModel)]="table_id"/></td>
@@ -71,10 +72,11 @@ required>
 <br/>
 <div class="col-md-offset-5">
 <div class="btn-group">
-  <button type="submit"  [disabled]="!addform.form.valid" class="btn btn-primary">
+  <button type="submit" *ngIf="order_id==0" [disabled]="!addform.form.valid" class="btn btn-primary">
     add Order
   </button>
-  </div></div>
+  </div>
+  </div>
   <br/><br/>
 </div>
 </div>

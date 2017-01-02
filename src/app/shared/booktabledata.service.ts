@@ -31,6 +31,18 @@ let header=new Headers({'Content-Type':'application/json'});
 let req=new RequestOptions({headers:header});
 return this._http.delete(this.url+id,req).map((res:Response)=>res.json());
 }
+
+deleteallBooktable(item:BooktableModel[])
+{
+  let body=JSON.stringify(item);
+  let header=new Headers({'Content-Type':'application/json'});
+  let req=new RequestOptions({headers:header});
+  return this._http.post(this.url+1,body,req).map(
+    (res:Response)=>res.json()
+    
+  );
+}
+
 updateBooktable(item:BooktableModel){
 
 let body=JSON.stringify(item);

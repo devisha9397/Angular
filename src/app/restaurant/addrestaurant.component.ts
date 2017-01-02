@@ -40,7 +40,7 @@ public restaurant:RestaurantModel[]=[];
         this.rest_id=params["rest_id"];
       }
     );
-  if(this.rest_id==0)
+  if(this.rest_id!=0)
   {
   this._restaurant_data.getRestaurantbyid(this.rest_id).subscribe(
 (data:RestaurantModel[])=>{
@@ -64,10 +64,13 @@ public restaurant:RestaurantModel[]=[];
 }
 
   );
+
   }
   }
 
    addRestaurant(){
+     if(this.rest_id==0)
+     {
 
   this._restaurant_data.addRestaurant(new RestaurantModel(this.rest_id,this.fk_owner_email,this.fk_cat_id,this.fk_review_id,this.rest_name,this.rest_add,this.pincode,this.rest_number,this.rest_email,this.opening_status,this.main_photo,this.menu_photo,this.other_photos)).subscribe(
     (data:any)=>{
@@ -84,6 +87,26 @@ public restaurant:RestaurantModel[]=[];
       console.log("book add");
     }
   );
+     }
+     else
+     {
+
+        this._restaurant_data.updateRestaurant(new RestaurantModel(this.rest_id,this.fk_owner_email,this.fk_cat_id,this.fk_review_id,this.rest_name,this.rest_add,this.pincode,this.rest_number,this.rest_email,this.opening_status,this.main_photo,this.menu_photo,this.other_photos))
+    .subscribe(
+      (data:any)=>{
+
+         console.log(data); 
+         this._router.navigate(['/restaurants']); 
+    },
+    function(error){
+
+      alert(error);
+    },
+    function(){
+      alert('Updated');
+      }
+    );
+     }
 }
 
 }

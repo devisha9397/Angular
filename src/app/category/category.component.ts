@@ -43,13 +43,18 @@ allCategory:CategoryModel1[]=[];
       function(){
         console.log('badhu patyu');
       }
+      
   );
 
   }
-  addCategory(item:CategoryModel1)
+  addCategory()
   {
     this._router.navigate(['/addcategories',0]);
   }
-
+  
+ updateCategory(item:CategoryModel)
+  {
+       this._router.navigate(['/addcategories',item.cat_id]);
+  }
 
 }

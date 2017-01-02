@@ -38,7 +38,7 @@ public menuitem:MenuitemModel[]=[];
         this.allRest=data;
       }
     );
-  if(this.item_id==0)
+  if(this.item_id!=0)
   {
   this._menuitem_data.getMenuitembyid(this.item_id).subscribe(
 (data:MenuitemModel[])=>{
@@ -56,6 +56,7 @@ public menuitem:MenuitemModel[]=[];
   );
   }
   }
+
 
    addMenuitem(){
 
@@ -80,6 +81,21 @@ public menuitem:MenuitemModel[]=[];
     else
     {
       //edit
+      this._menuitem_data.updateMenuitem(new MenuitemModel(this.item_id,this.fk_rest_id,this.item_name,this.item_price))
+    .subscribe(
+      (data:any)=>{
+
+         console.log(data); 
+         this._router.navigate(['/menuitems']); 
+    },
+    function(error){
+
+      alert(error);
+    },
+    function(){
+      alert('Updated');
+      }
+    );
     }
    }
   

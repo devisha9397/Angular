@@ -9,6 +9,7 @@
     <div class="panel panel-primary">
   <div class="panel-body">
     <h2 *ngIf="table_id==0" >Add Booktable Here</h2>
+    <h2 *ngIf="table_id!=0" >Edit Booktable Here</h2>
   </div>
   
 <!--<div class="input-group">
@@ -63,10 +64,16 @@ required>
 
 <div class="col-md-offset-5">
 <div class="btn-group">
-  <button type="submit" [disabled]="!addform.form.valid" class="btn btn-primary">
-    add Booktable
+  <button type="submit" *ngIf="table_id==0" [disabled]="!addform.form.valid" class="btn btn-primary">
+    Add Booktable
   </button>
-  </div></div>
+  </div>
+  <div class="btn-group">
+  <button type="submit" *ngIf="table_id!=0" [disabled]="!addform.form.valid" class="btn btn-primary">
+    Edit Booktable
+  </button>
+  </div>
+  </div>
   <br/><br/>
 </div>
 </div>

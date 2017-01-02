@@ -10,7 +10,7 @@ import {Subscription} from 'rxjs/Rx';
 })
 export class AddrestownerComponent implements OnInit {
 
-private owner_email:string;
+private owner_email:string=' ';
 private fk_rest_id:number;
 private rest_owner_name:string;
 private owner_mob_no:string;
@@ -21,13 +21,14 @@ public restowner:RestownerModel[]=[];
 
   ngOnInit() {
 
+
      this._subscription=this._acrouter.params.subscribe(
 
       (params:any)=>{
         this.owner_email=params["owner_email"];
       }
     );
-  if(this.owner_email="")
+  if(this.owner_email!='0')
   {
   this._restowner_data.getRestownerbyid(this.owner_email).subscribe(
 (data:RestownerModel[])=>{
@@ -41,12 +42,14 @@ public restowner:RestownerModel[]=[];
 
 }
 
-  );
+  ); 
   }
   }
+
 
    addRestowner(){
-
+ if(this.owner_email=='0') 
+    {
   this._restowner_data.addRestowner(new RestownerModel(this.owner_email,this.fk_rest_id,this.rest_owner_name,this.owner_mob_no)).subscribe(
     (data:any)=>{
     alert('added');
@@ -62,6 +65,28 @@ public restowner:RestownerModel[]=[];
       console.log("book add");
     }
   );
+   }
+ else
+  {
+    //edit
+    this._restowner_data.updateRestowner(new RestownerModel(this.owner_email,this.fk_rest_id,this.rest_owner_name,this.owner_mob_no))
+    .subscribe(
+      (data:any)=>{
+
+         console.log(data); 
+         this._router.navigate(['/restowners']); 
+    },
+    function(error){
+
+      alert(error);
+    },
+    function(){
+      alert('Updated');
+      }
+    );
+  }
+   }
+  
 } 
 
-}
+

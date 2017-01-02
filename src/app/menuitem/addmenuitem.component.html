@@ -8,6 +8,7 @@
     <div class="panel panel-primary">
   <div class="panel-body">
     <h2 *ngIf="item_id==0" >Add Menuitem Here</h2>
+    <h2 *ngIf="item_id!=0" >Edit Category Here</h2>
   </div>
 
 <!--<div class="input-group">
@@ -33,6 +34,7 @@ required>
 </div>
 <br/>
 
+
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter Item price:</span>
   <td><input type="number" name="item_price" [(ngModel)]="item_price"/></td>
@@ -41,10 +43,17 @@ required>
 
 <div class="col-md-offset-5">
 <div class="btn-group">
-  <button type="submit"  [disabled]="!addform.form.valid" class="btn btn-primary">
+  <button type="submit" *ngIf="item_id==0" [disabled]="!addform.form.valid" class="btn btn-primary">
     add Menuitem
   </button>
-  </div></div>
+
+  </div>
+  <div class="btn-group">
+  <button type="submit" *ngIf="item_id!=0" [disabled]="!addform.form.valid" class="btn btn-primary">
+    Edit Menuitem
+  </button>
+  </div>
+  </div>
   <br/><br/>
 </div>
 </div>

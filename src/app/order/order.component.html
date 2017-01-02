@@ -4,25 +4,27 @@
 <a routerLink="/addbooktables"><button  type="button" class="btn btn-primary">
 <span class="glyphicon glyphicon-plus-sign" ></span></button></a>
 </div>-->
+
 <div class="col-md-8 col-md-offset-11">
-<button (click)='addOrder(item)' type="button" class="btn btn-primary">
+<button (click)='addOrder()' type="button" class="btn btn-primary">
 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
 </div>
 
+
 </div>
+<div class="container-fluid">
 <table class="table">
     <tr>
      <th>Order id</th>
       <th>Rest name</th>
       <th>User_email</th>
-      <th>Item_id</th>
       <th>Item name</th>
       <th>Quantity</th>
       <th>Total amount</th>
       <th>Flag</th>
       <th>Date of order</th>
       <th>Delivery area</th> 
-      </tr>
+      </tr> 
     <tr *ngFor="let item of allOrder">
   <td>{{item.order_id}}</td>
   <td>{{item.rest_name}}</td>
@@ -37,5 +39,7 @@
 <td><button (click)='deleteOrder(item)' type="button" class="btn btn-danger">
 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
 
+
    </tr>
   </table>
+</div>
