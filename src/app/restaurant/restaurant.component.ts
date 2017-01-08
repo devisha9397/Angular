@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core'; 
-import { Router } from '@angular/router';
+import { Router } from '@angular/router';  
 import { RestaurantModel } from '../shared/restaurant-model';
-//import { RestaurantModel } from '../shared/restaurant-model';
+import { RestaurantModel1 } from '../shared/restaurant-model1';
 import { RestaurantdataService } from '../shared/restaurantdata.service';
-
-@Component({
+ 
+@Component({ 
   selector: 'app-restaurant',
   templateUrl: './restaurant.component.html',
   styleUrls: ['./restaurant.component.css']
 })
 export class RestaurantComponent implements OnInit {
 
-allrest:RestaurantModel[]=[];
+allrest:RestaurantModel1[]=[];
   constructor(public _rest_data:RestaurantdataService,public _router:Router) { }
 
   ngOnInit() {
+ 
+    this._rest_data.getRestaurantjoin().subscribe(
 
-    this._rest_data.getAllRestaurant().subscribe(
-
-      (data:RestaurantModel[])=>{
+      (data:RestaurantModel1[])=>{
         this.allrest=data;
       },
       function(error){
@@ -30,7 +30,7 @@ allrest:RestaurantModel[]=[];
     );
   }
 
-  deleteRestaurant(item:RestaurantModel){
+  deleteRestaurant(item:RestaurantModel1){
 
   this._rest_data.deleteRestaurant(item.rest_id).subscribe(
 
@@ -44,12 +44,12 @@ allrest:RestaurantModel[]=[];
       function(){
         console.log('badhu patyu');
       }
-  );
+  ); 
 
 
   }
-
-  addRestaurant()
+ 
+  addRestaurant(item:RestaurantModel)
   {
     this._router.navigate(['/addrestaurants',0]);//////
   }

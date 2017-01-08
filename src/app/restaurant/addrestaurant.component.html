@@ -1,5 +1,5 @@
 
-<app-header></app-header>
+<app-header></app-header> 
 
 
 <form (ngSubmit)="addRestaurant()" #addform="ngForm">
@@ -14,24 +14,32 @@
   <td><input type="number" name="table_id" [(ngModel)]="table_id"/></td>
 </div>
 <br/>-->
-<div class="container-fluid">
+<!--<div class="container-fluid">
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter fk_owner email:</span>
   <td><input type="text" name="fk_owner_email" [(ngModel)]="fk_owner_email" /></td>
 </div>
-<br/>
+<br/>-->
 
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Enter fk_cat id:</span>
-  <td><input type="number" name="fk_cat_id" [(ngModel)]="fk_cat_id" /></td>
+  <span class="input-group-addon" id="basic-addon1">Select Category:</span>
+  <select class="form-control" id="fk_cat_id" 
+[(ngModel)]="fk_cat_id" name="fk_cat_id"
+required>
+<option *ngFor="let s of allCat" [value]="s.cat_id">{{s.cusines}}</option>
+</select>
 </div>
-<br/>
+<br/> 
 
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Enter fk_review id:</span>
-  <td><input type="number" name="fk_review_id" [(ngModel)]="fk_review_id"/></td>
+<!--<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Select Review:</span>
+  <select class="form-control" id="fk_review_id" 
+[(ngModel)]="fk_review_id" name="fk_review_id"
+required>
+<option *ngFor="let s of allReview" [value]="s.review_id">{{s.review_message}}</option>
+</select>
 </div>
-<br/>
+<br/>-->
 
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter restaurant name:</span>
@@ -69,24 +77,6 @@
 </div>
 <br/>
 
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Main photo of restaurant:</span>
-  <td><input type="text" name="main_photo" [(ngModel)]="main_photo"/></td>
-</div>
-<br/>
-
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Enter menu photo:</span>
-  <td><input type="text" name="menu_photo" [(ngModel)]="menu_photo"/></td>
-</div>
-<br/>
-
-
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Enter other photos:</span>
-  <td><input type="text" name="other_photos" [(ngModel)]="other_photos"/></td>
-</div>
-<br/>
 
 <div class="col-md-offset-5">
 <div class="btn-group">
@@ -97,11 +87,10 @@
   <div class="btn-group">
   <button type="submit" *ngIf="rest_id!=0" [disabled]="!addform.form.valid" class="btn btn-primary">
     edit Restaurant
-  </button>
+  </button> 
   </div>
   </div>
   <br/><br/>
-</div>
 </div>
 </div>
 </form>

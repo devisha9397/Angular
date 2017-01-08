@@ -20,7 +20,7 @@ private order_id:number;
 private fk_rest_id:number;
 private fk_user_email:string;
 private fk_item_id:number;
-private item_name:string;
+//private item_name:string;
 private quantity:number;
 private _subscription:Subscription;
 private total_amount:number;
@@ -65,7 +65,7 @@ public order:OrderModel[]=[];
   this.fk_rest_id=this.order[0].fk_rest_id;
   this.fk_user_email=this.order[0].fk_user_email;
   this.fk_item_id=this.order[0].fk_item_id;
-  this.item_name=this.order[0].item_name;
+ 
   this.quantity=this.order[0].quantity;
   this.total_amount=this.order[0].total_amount;
   this.flag=this.order[0].flag;
@@ -80,7 +80,7 @@ public order:OrderModel[]=[];
 
 addOrder(){
 
-  this._order_data.addOrder(new OrderModel(this.order_id,this.fk_rest_id,this.fk_user_email,this.fk_item_id,this.item_name,this.quantity,this.total_amount,this.flag,this.date_of_order,this.delivery_area)).subscribe(
+  this._order_data.addOrder(new OrderModel(this.order_id,this.fk_rest_id,this.fk_user_email,this.fk_item_id,this.quantity,this.total_amount,this.flag,this.date_of_order,this.delivery_area)).subscribe(
     (data:any)=>{
       alert('added');
     

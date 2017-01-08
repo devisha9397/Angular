@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoryModel } from '../shared/category-model';
-import { CategoryModel1 } from '../shared/category-model1';
 import { CategorydataService } from '../shared/categorydata.service';
 @Component({
   selector: 'app-category',
@@ -10,14 +9,14 @@ import { CategorydataService } from '../shared/categorydata.service';
 })
 export class CategoryComponent implements OnInit {
 
-allCategory:CategoryModel1[]=[];
-  constructor(public _category_data:CategorydataService,public _router:Router) { }
+allCategory:CategoryModel[]=[];
+  constructor( public _category_data:CategorydataService,public _router:Router) { }
 
   ngOnInit() {
 
-       this._category_data.getCategoryjoin().subscribe(
+       this._category_data.getAllCategory().subscribe(
 
-      (data:CategoryModel1[])=>{
+      (data:CategoryModel[])=>{
         this.allCategory=data;
       },
       function(error){
@@ -29,7 +28,7 @@ allCategory:CategoryModel1[]=[];
     );  
   }
 
-  deleteCategory(item:CategoryModel1){
+  deleteCategory(item:CategoryModel){
 
   this._category_data.deleteCategory(item.cat_id).subscribe(
 

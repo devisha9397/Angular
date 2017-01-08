@@ -8,7 +8,7 @@ private url:string="http://localhost:3000/booktables/";
 private url1:string="http://localhost:3000/getbookjoins";
  constructor(public _http:Http) { }
   
-getAllBooktable(){
+getAllBooktable(){ 
 
 return this._http.get(this.url).map((res:Response)=>res.json());
 }

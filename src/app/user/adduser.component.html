@@ -1,15 +1,15 @@
 
-<app-header></app-header> 
+<app-header></app-header>
 
   
  
-<form (ngSubmit)="addBooktable()" #addform="ngForm">
+<form (ngSubmit)="addUser()" #addform="ngForm">
 
   <div class="col-md-7 col-md-offset-3">
     <div class="panel panel-primary">
   <div class="panel-body">
-    <h2 *ngIf="table_id==0" >Add Booktable Here</h2>
-    <h2 *ngIf="table_id!=0" >Edit Booktable Here</h2>
+    <h2 *ngIf="user_email=='0'" >Add User Here</h2>
+    <h2 *ngIf="user_email!='0'" >Edit Edit Here</h2>
   </div>
   
 <!--<div class="input-group">
@@ -23,7 +23,7 @@
 <div class="container-fluid">
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter user email:</span>
-  <td><input type="text" name="fk_user_email" [(ngModel)]="fk_user_email" /></td>
+  <td><input type="text" name="user_email" [(ngModel)]="user_email" /></td>
 </div>
 <br/>
  
@@ -39,17 +39,17 @@ required>
 <br/>
 
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Enter date:</span>
-  <td><input type="text" name="date" [(ngModel)]="date"/></td>
+  <span class="input-group-addon" id="basic-addon1">Enter address:</span>
+  <td><input type="text" name="address" [(ngModel)]="address"/></td>
 </div>
 <br/>
 
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter no of people:</span>
-  <td><input type="number" name="no_of_people" [(ngModel)]="no_of_people"/></td>
+  <td><input type="number" name="mobile_no" [(ngModel)]="mobile_no"/></td>
 </div>
 <br/>
-
+<!--<input type="radio" name="female" value="female" [(ngModel)]="female"/>female-->
 
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter time:</span>

@@ -27,8 +27,13 @@ import { UserComponent } from './user/user.component';
 import { OrderComponent } from './order/order.component';
 import { AddorderComponent } from './order/addorder.component';
 import { ReviewComponent } from './review/review.component';
-
-
+import { AdduserComponent } from './user/adduser.component';
+import { FavComponent } from './fav/fav.component';
+import { FavdataService } from './shared/favdata.service';
+import { AddfavComponent } from './fav/addfav.component';
+import { DiscountComponent } from './discount/discount.component';
+import { DiscountdataService } from './shared/discountdata.service';
+import { AdddiscountComponent } from './discount/adddiscount.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,12 @@ import { ReviewComponent } from './review/review.component';
     UserComponent,
     OrderComponent,
     AddorderComponent,
-    ReviewComponent
+    ReviewComponent,
+    AdduserComponent,
+    FavComponent,
+    AddfavComponent,
+    DiscountComponent,
+    AdddiscountComponent
 
   ],
   imports: [
@@ -56,7 +66,7 @@ import { ReviewComponent } from './review/review.component';
     HttpModule,
     Router
   ],
-  providers: [BooktabledataService,CategorydataService,MenuitemdataService,RestownerdataService,RestaurantdataService,UserdataService,OrderdataService,ReviewdataService],
+  providers: [BooktabledataService,CategorydataService,MenuitemdataService,RestownerdataService,RestaurantdataService,UserdataService,OrderdataService,ReviewdataService,FavdataService,DiscountdataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

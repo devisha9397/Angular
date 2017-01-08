@@ -1,7 +1,5 @@
 export class RestaurantModel {
 
-    public constructor(public rest_id:number,public fk_owner_email:string,public fk_cat_id:number,
-  public  fk_review_id:number,public rest_name:string,public rest_add:string,public pincode:number,
-  public rest_number:string,public rest_email:string,public opening_status:string,
-  public main_photo:string,public menu_photo:string,public other_photos:string){}
+    public constructor(public rest_id:number,public fk_owner_email:string,public fk_cat_id:number,public rest_name:string,public rest_add:string,public pincode:number,
+  public rest_number:string,public rest_email:string,public opening_status:string){}
 }

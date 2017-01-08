@@ -15,13 +15,10 @@ export class AddcategoryComponent implements OnInit {
 
 allRest:RestaurantModel[]=[];
 private cat_id:number;
-private fk_rest_id:number;
+
 private cusines:string;
-private cost:number;
-private hours:string;
-private known_for:string;
+
 private _subscription:Subscription;//aa bdha ma rakhvu j
-private spotlight:string;
 
 public category:CategoryModel[]=[];
   constructor(public _category_data:CategorydataService,public _rest_data:RestaurantdataService ,public _router:Router,public _acrouter:ActivatedRoute) { }
@@ -46,12 +43,8 @@ public category:CategoryModel[]=[];
 
   this.category=data;
   
-  this.fk_rest_id=this.category[0].fk_rest_id;
+  
   this.cusines=this.category[0].cusines;
-  this.cost=this.category[0].cost;
-  this.hours=this.category[0].hours;
-  this.known_for=this.category[0].known_for;
-  this.spotlight=this.category[0].spotlight;
 
 }
 
@@ -63,7 +56,7 @@ public category:CategoryModel[]=[];
 
   if(this.cat_id==0) 
     {
-  this._category_data.addCategory(new CategoryModel(this.cat_id,this.fk_rest_id,this.cusines,this.cost,this.hours,this.known_for,this.spotlight)).subscribe(
+  this._category_data.addCategory(new CategoryModel(this.cat_id,this.cusines)).subscribe(
     (data:any)=>{
       alert('added');
     
@@ -82,7 +75,7 @@ public category:CategoryModel[]=[];
 else{
   //edit
 
-  this._category_data.updateCategory(new CategoryModel(this.cat_id,this.fk_rest_id,this.cusines,this.cost,this.hours,this.known_for,this.spotlight))
+  this._category_data.updateCategory(new CategoryModel(this.cat_id,this.cusines))
     .subscribe(
       (data:any)=>{
 

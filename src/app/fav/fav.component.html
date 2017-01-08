@@ -1,3 +1,4 @@
+
 <app-header></app-header>
 <div class="row"> 
   <!--<div class="col-md-8 col-md-offset-11">
@@ -5,27 +6,27 @@
 <span class="glyphicon glyphicon-plus-sign" ></span></button></a>
 </div>-->
 <div class="col-md-8 col-md-offset-11">
-<button (click)='addCategory()' type="button" class="btn btn-primary">
+<button (click)='addFav()' type="button" class="btn btn-primary">
 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
 </div> 
 
 </div>
 <table class="table">
     <tr>
-     <th>Category id</th>
+     <th>Restaurant name</th>
      
-      <th>Cusines</th>
+      <th>User Email</th>
       
       </tr>
-    <tr *ngFor="let item of allCategory">
-  <td>{{item.cat_id}}</td>
+    <tr *ngFor="let item of allFav">
+  <td>{{item.fk_rest_id}}</td>
   
-    <td>{{item.cusines}}</td>
+    <td>{{item.fk_user_email}}</td>
   
-<td><button (click)='deleteCategory(item)' type="button" class="btn btn-danger">
+<td><button (click)='deleteFav(item)' type="button" class="btn btn-danger">
 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
 
-<td><button (click)=' updateCategory(item)' type="button" class="btn btn-success">
+<td><button (click)=' updateFav(item)' type="button" class="btn btn-success">
 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></td>
    </tr>
   </table>

@@ -12,7 +12,7 @@ import { RestaurantdataService } from '../shared/restaurantdata.service';
   selector: 'app-addbooktable',
   templateUrl: './addbooktable.component.html',
   styleUrls: ['./addbooktable.component.css']
-})
+}) 
 export class AddbooktableComponent implements OnInit {
 
 //alluse:CategoryModel[]=[];

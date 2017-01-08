@@ -4,19 +4,13 @@ import { Http,Response,RequestOptions,Headers } from '@angular/http';
 import 'rxjs/Rx';
 
 @Injectable()
-export class CategorydataService{
+export class CategorydataService {
 private url:string="http://localhost:3000/categories/";
-private url1:string="http://localhost:3000/getcategoryjoins";
   constructor(public _http:Http) { }
 
 getAllCategory(){
 
 return this._http.get(this.url).map((res:Response)=>res.json());
-}
-
-getCategoryjoin()
-{
-    return this._http.get(this.url1).map((res:Response)=>res.json());
 }
 
 getCategorybyid(id:number){

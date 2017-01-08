@@ -47,6 +47,10 @@ export class UserComponent implements OnInit {
   );
 
   }
+  addUser()
+  {
+    this._router.navigate(['/addusers',0]);/////
+  }
 
 /*addUser(item:UserModel)
   {
