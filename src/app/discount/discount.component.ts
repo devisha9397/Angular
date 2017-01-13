@@ -48,12 +48,12 @@ deleteDiscount(item:DiscountModel1){
   );
 
   }
-  addDiscount()
+  addDiscount(item:DiscountModel1)
   {
     this._router.navigate(['/adddiscounts',0]);///
   }
   
- updateDiscount(item:DiscountModel)
+ updateDiscount(item:DiscountModel1)
   {
        this._router.navigate(['/adddiscounts',item.discount_id]);////
   }

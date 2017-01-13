@@ -48,7 +48,7 @@ export class RestownerComponent implements OnInit {
 
 
   }
-   addRestowner()
+   addRestowner(item:RestownerModel)
   {
     this._router.navigate(['/addrestowners','0']);
   }

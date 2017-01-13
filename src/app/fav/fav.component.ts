@@ -25,7 +25,7 @@ allFav:FavModel1[]=[];
       function(){
         console.log('badhu patyu');
       }
-    );*/ 
+    );*/
   }
 
    deleteFav(item:FavModel1){
@@ -47,12 +47,12 @@ allFav:FavModel1[]=[];
 
   }
  
- addFav()
+ addFav(item:FavModel1)
   {
     this._router.navigate(['/addfavs',0]);////
   }
   
- updateFav(item:FavModels)
+ updateFav(item:FavModel1)
   {
        this._router.navigate(['/addFav',item.fav_id]);
   }

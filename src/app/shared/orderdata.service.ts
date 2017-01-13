@@ -24,7 +24,7 @@ getOrderjoin()
 getOrderbyid(id:number){
 
 return this._http.get(this.url+id).map((res:Response)=>res.json());
-}
+} 
 
 addOrder(item:OrderModel){
 

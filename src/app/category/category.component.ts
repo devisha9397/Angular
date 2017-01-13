@@ -46,7 +46,7 @@ allCategory:CategoryModel[]=[];
   );
 
   }
-  addCategory()
+  addCategory(item:CategoryModel)
   {
     this._router.navigate(['/addcategories',0]);
   }

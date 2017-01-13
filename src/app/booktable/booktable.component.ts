@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { BooktableModel } from '../shared/booktable-model';
 import { BooktableModel1 } from '../shared/booktable-model1';
 import { BooktabledataService } from '../shared/booktabledata.service';
-
+ 
 @Component({
   selector: 'app-booktable',
   templateUrl: './booktable.component.html',
@@ -84,13 +84,13 @@ deleteBooktable(item:BooktableModel1){
     );
   
   }
-
-  addBooktable()
+ 
+  addBooktable(item:BooktableModel1)
   {
     this._router.navigate(['/addbooktables',0]);
   }
 
-  updateBooktable(item:BooktableModel)
+  updateBooktable(item:BooktableModel1)
   {
        this._router.navigate(['/addbooktables',item.table_id]);
   }

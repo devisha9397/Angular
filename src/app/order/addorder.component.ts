@@ -52,7 +52,7 @@ public order:OrderModel[]=[];
         this.allItem=data;
       }
     );
-  if(this.order_id==0)
+  if(this.order_id!=0)
   {
   this._order_data.getOrderbyid(this.order_id).subscribe(
 (data:OrderModel[])=>{
@@ -79,10 +79,13 @@ public order:OrderModel[]=[];
   }
 
 addOrder(){
-
+if(this.order_id==0)
+{
   this._order_data.addOrder(new OrderModel(this.order_id,this.fk_rest_id,this.fk_user_email,this.fk_item_id,this.quantity,this.total_amount,this.flag,this.date_of_order,this.delivery_area)).subscribe(
+
     (data:any)=>{
       alert('added');
+      console.log(data);
     
       this._router.navigate(['/orders']);
     },
@@ -96,5 +99,25 @@ addOrder(){
     }
   );
 
+}
+
+else{
+  //edit
+ this._order_data.updateOrder(new OrderModel(this.order_id,this.fk_rest_id,this.fk_user_email,this.fk_item_id,this.quantity,this.total_amount,this.flag,this.date_of_order,this.delivery_area))
+    .subscribe(
+      (data:any)=>{
+
+         console.log(data); 
+         this._router.navigate(['/orders']); 
+    },
+    function(error){
+
+      alert(error);
+    },
+    function(){
+      alert('Updated');
+      }
+    );
+}
 }
 }

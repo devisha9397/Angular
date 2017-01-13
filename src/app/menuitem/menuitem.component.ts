@@ -50,7 +50,7 @@ export class MenuitemComponent implements OnInit {
 
   }
 
-  addMenuitem()
+  addMenuitem(item:MenuitemModel1)
   {
     this._router.navigate(['/addmenuitems',0]);
   }

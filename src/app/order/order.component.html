@@ -1,12 +1,15 @@
 <app-header></app-header>
 <div class="row"> 
+
+  <div class="panel panel-default">
+  <div class="panel-body"> 
   <!--<div class="col-md-8 col-md-offset-11">
 <a routerLink="/addbooktables"><button  type="button" class="btn btn-primary">
 <span class="glyphicon glyphicon-plus-sign" ></span></button></a>
 </div>-->
 
 <div class="col-md-8 col-md-offset-11">
-<button (click)='addOrder()' type="button" class="btn btn-primary">
+<button (click)='addOrder(item)' type="button" class="btn btn-primary">
 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
 </div>
 
@@ -39,7 +42,11 @@
 <td><button (click)='deleteOrder(item)' type="button" class="btn btn-danger">
 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
 
+<td><button (click)=' updateOrder(item)' type="button" class="btn btn-success">
+<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></td>
 
    </tr>
   </table>
+</div>
+  </div>
 </div>

@@ -8,7 +8,7 @@ import { OrderdataService } from '../shared/orderdata.service';
   selector: 'app-order',
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']
-})
+}) 
 export class OrderComponent implements OnInit {
  
 allOrder:OrderModel1[]=[];
@@ -49,10 +49,14 @@ deleteOrder(item:OrderModel1){
   }
 
 
-addOrder()
+addOrder(item:OrderModel1)
   {
     this._router.navigate(['/addorders',0]);
   }
 
+ updateOrder(item:OrderModel1)
+  {
+       this._router.navigate(['/addorders',item.order_id]);
+  }
  
 }

@@ -49,11 +49,11 @@ allrest:RestaurantModel1[]=[];
 
   }
  
-  addRestaurant(item:RestaurantModel)
+  addRestaurant(item:RestaurantModel1)
   {
     this._router.navigate(['/addrestaurants',0]);//////
   }
-updateRestaurant(item:RestaurantModel) 
+updateRestaurant(item:RestaurantModel1) 
   {
        this._router.navigate(['/addrestaurants',item.rest_id]);
   }

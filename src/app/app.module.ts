@@ -34,6 +34,17 @@ import { AddfavComponent } from './fav/addfav.component';
 import { DiscountComponent } from './discount/discount.component';
 import { DiscountdataService } from './shared/discountdata.service';
 import { AdddiscountComponent } from './discount/adddiscount.component';
+import { BooktablefilterPipe } from './booktable/booktablefilter.pipe';
+import { CategoryfilterPipe } from './category/categoryfilter.pipe';
+import { MenuitemfilterPipe } from './menuitem/menuitemfilter.pipe';
+import { RestownerfilterPipe } from './restowner/restownerfilter.pipe';
+
+
+import { PaginatePipe } from './ng2paging/paginate.pipe';
+import { PaginationService } from './ng2paging/pagination.service';
+import { PaginationControlsComponent } from './ng2paging/pagination-controls.component';
+import { PaginationControlsDirective } from './ng2paging/pagination-controls.directive';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +68,14 @@ import { AdddiscountComponent } from './discount/adddiscount.component';
     FavComponent,
     AddfavComponent,
     DiscountComponent,
-    AdddiscountComponent
+    AdddiscountComponent,
+    BooktablefilterPipe,
+    CategoryfilterPipe,
+    MenuitemfilterPipe,
+    RestownerfilterPipe,
+    PaginatePipe,
+    PaginationControlsComponent,
+    PaginationControlsDirective
 
   ],
   imports: [
@@ -66,7 +84,7 @@ import { AdddiscountComponent } from './discount/adddiscount.component';
     HttpModule,
     Router
   ],
-  providers: [BooktabledataService,CategorydataService,MenuitemdataService,RestownerdataService,RestaurantdataService,UserdataService,OrderdataService,ReviewdataService,FavdataService,DiscountdataService],
+  providers: [BooktabledataService,CategorydataService,MenuitemdataService,RestownerdataService,RestaurantdataService,UserdataService,OrderdataService,ReviewdataService,FavdataService,DiscountdataService,PaginationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
