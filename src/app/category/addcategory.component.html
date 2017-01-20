@@ -28,9 +28,11 @@
 
   <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter cusines:</span>
-  <td><input type="text" name="cusines" [(ngModel)]="cusines" /></td>
+  <td><input type="text" name="cusines" [(ngModel)]="cusines" ngModel minlength="3" /></td>
   </div>
-
+<div *ngIf= "cusines && cusines.length < 2" >
+  <h3> minimum 3 char are reqiured</h3>
+</div>
 <!--<div [hidden]="cusines.valid || cusines.pristine" class="alert alert-danger">
    Cusines is required
  </div>-->
@@ -55,7 +57,7 @@ Hours are required
 
 <div class="col-md-offset-5">
 <div class="btn-group">
-<button type="submit" *ngIf="cat_id==0" [disabled]="!addform.form.valid" [disabled]="!addform.form.valid" class="btn btn-primary">
+<button type="submit" *ngIf="cat_id==0" [disabled]="!addform.form.valid" class="btn btn-primary">
     add Category
   </button></div>
   <div class="btn-group">

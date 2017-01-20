@@ -2,24 +2,16 @@
 <app-header></app-header>
 
   
- 
+   
 <form (ngSubmit)="addUser()" #addform="ngForm">
 
   <div class="col-md-7 col-md-offset-3">
     <div class="panel panel-primary">
   <div class="panel-body">
-    <h2 *ngIf="user_email=='0'" >Add User Here</h2>
-    <h2 *ngIf="user_email!='0'" >Edit Edit Here</h2>
+    <h2  >Add User Here</h2>
+   <!-- <h2 *ngIf="user_email!='0'" >Edit User Here</h2>-->
   </div>
-  
-<!--<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Enter table id:</span>
-  <td><input type="number" name="table_id" [(ngModel)]="table_id"/></td>
-</div>
-<br/>-->
- 
-    
-<!--<h2 *ngIf="table_id!=0" >Add Booktable Here</h2>-->
+
 <div class="container-fluid">
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter user email:</span>
@@ -28,55 +20,84 @@
 <br/>
  
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Select Restaurant:</span>
-  <!--<input type="number" name="fk_rest_id" [(ngModel)]="fk_rest_id" />-->
-  <select class="form-control" id="fk_rest_id" 
-[(ngModel)]="fk_rest_id" name="fk_rest_id"
-required>
-<option *ngFor="let s of allRest" [value]="s.rest_id">{{s.rest_name}}</option>
-</select> 
+  <span class="input-group-addon" id="basic-addon1">Enter Your name:</span>
+  <input type="text" name="user_name" [(ngModel)]="user_name"   /> 
+</div>
+<br/> 
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter Password:</span>
+  <td><input type="password" name="password" [(ngModel)]="password"/></td>
+</div>
+<br/>
+
+
+<div class="input-group">
+  <span class="input-group">Enter Address:</span>
+</div>
+<div class="input-group">
+    <td><textarea rows="4" cols="50" name="address" [(ngModel)]="address"></textarea></td>
 </div>
 <br/>
 
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Enter address:</span>
-  <td><input type="text" name="address" [(ngModel)]="address"/></td>
-</div>
-<br/>
-
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Enter no of people:</span>
+  <span class="input-group-addon" id="basic-addon1">Enter Mobile no:</span>
   <td><input type="number" name="mobile_no" [(ngModel)]="mobile_no"/></td>
 </div>
 <br/>
-<!--<input type="radio" name="female" value="female" [(ngModel)]="female"/>female-->
 
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Enter time:</span>
-  <td><input type="text" name="time" [(ngModel)]="time"/></td>
+  <span class="input-group-addon" id="basic-addon1">Gender:</span>
+  <!--<td><input type="radio" name="female" [(ngModel)]="gender"/>Female
+   <input type="radio" name="male" [(ngModel)]="gender" />Male</td>-->
+
+   <td><input type="text" name="gender" [(ngModel)]="gender"/></td>
+</div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">City:</span>
+  <input type="text" list="city"  name="city" [(ngModel)]="city" />
+<datalist id="city">
+  <option>Ahemedabad</option>
+  <option>Rajkot</option>
+  <option>Baroda</option>
+  <option>Bhavnagar</option>
+</datalist>
 </div> 
 <br/> 
 
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Enter additional request:</span>
-  <td><input type="text" name="additional_request" [(ngModel)]="additional_request"/></td>
+  <span class="input-group-addon" id="basic-addon1"> Profile pic:</span>
+ <!-- <td><input type="file" (change)="fileChange(input)" #input /></td>-->
+  <td><input type="text" name="pro_pic" [(ngModel)]="pro_pic"/></td>
 </div>
+<!--<div *ngFor="let file_src of file_srcs; let i = index"> 
+<img [attr.src]='file_srcs[0]' alt=""/>
+</div>-->
 <br/>
 
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1"> Select your Birth date:</span>
+ <!-- <td><input type="date" name="DOB" [(ngModel)]="DOB"/></td>-->
+ <td><input type="text" name="DOB" [(ngModel)]="DOB"/></td>
+</div>
+<br/>
+ 
 <div class="col-md-offset-5">
 <div class="btn-group">
-  <button type="submit" *ngIf="table_id==0" [disabled]="!addform.form.valid" class="btn btn-primary">
+  <button type="submit" [disabled]="!addform.form.valid" class="btn btn-primary">
     Add Booktable
   </button>
   </div>
-  <div class="btn-group">
-  <button type="submit" *ngIf="table_id!=0" [disabled]="!addform.form.valid" class="btn btn-primary">
+  <!--<div class="btn-group">
+  <button type="submit" *ngIf="user_email!='0'" [disabled]="!addform.form.valid" class="btn btn-primary">
     Edit Booktable
   </button>
-  </div>
+  </div>-->
   </div>
   <br/><br/>
 </div>
 </div>
-</div>
+  </div>
 </form>

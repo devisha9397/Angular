@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BooktableModel } from '../shared/booktable-model';
 import { BooktabledataService } from '../shared/booktabledata.service';
 import { Router,ActivatedRoute } from '@angular/router';
-import {Subscription} from 'rxjs/Rx';
+import { Subscription } from 'rxjs/Rx';
 import { RestaurantModel } from '../shared/restaurant-model';
 import { RestaurantdataService } from '../shared/restaurantdata.service';
 //import { UserModel } from '../shared/user-model';
@@ -65,7 +65,7 @@ private additional_request:string;
 
   );
 
-  }//aa bdha ma edit ma add kevu
+  }
   } 
 
   addBooktable(){

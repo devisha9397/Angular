@@ -40,7 +40,14 @@ required>
 </select> 
 </div>
 <br/>
- 
+
+
+<!--<div class="input-group">
+  <span class="input-group" id="basic-addon1"> amount per item:</span>
+  <td *ngFor="let item of order" [value]="item.item_id">
+  {{item.total_amount}}</td>
+</div>
+<br/> -->
 <!--<div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter Item name:</span>
   <td><input type="text" name="item_name" [(ngModel)]="item_name"/></td>
@@ -54,10 +61,11 @@ required>
 <br/>
 
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Enter Total amount:</span>
+  <span class="input-group-addon" id="basic-addon1"> Total amount:</span>
   <td><input type="number" name="total_amount" [(ngModel)]="total_amount"/></td>
 </div>
 <br/>
+
 
 
 <div class="input-group">

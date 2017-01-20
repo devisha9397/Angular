@@ -26,7 +26,7 @@ aria-describedby="basic-addon1" style="width: 500px;">
       <th>Delete</th>
       <th>Edit</th>
       </tr>
-    <tr *ngFor="let item of (allMenuitem | menuitemfilter:search.value )">
+    <tr *ngFor="let item of (allMenuitem | menuitemfilter:search.value | paginate: { itemsPerPage: 2, currentPage: page }  )">
   <td>{{item.item_id}}</td>
   <td>{{item.rest_name}}</td>
  <td>{{item.item_name}}</td>
@@ -42,4 +42,7 @@ aria-describedby="basic-addon1" style="width: 500px;">
 
    </tr>
   </table>
+   <div class="has-text-centered">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
 </div>

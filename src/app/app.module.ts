@@ -27,6 +27,7 @@ import { UserComponent } from './user/user.component';
 import { OrderComponent } from './order/order.component';
 import { AddorderComponent } from './order/addorder.component';
 import { ReviewComponent } from './review/review.component';
+import { AddreviewComponent } from './review/addreview.component';
 import { AdduserComponent } from './user/adduser.component';
 import { FavComponent } from './fav/fav.component';
 import { FavdataService } from './shared/favdata.service';
@@ -44,6 +45,9 @@ import { PaginatePipe } from './ng2paging/paginate.pipe';
 import { PaginationService } from './ng2paging/pagination.service';
 import { PaginationControlsComponent } from './ng2paging/pagination-controls.component';
 import { PaginationControlsDirective } from './ng2paging/pagination-controls.directive';
+import { RestaurantfilterPipe } from './restaurant/restaurantfilter.pipe';
+import { OrderfilterPipe } from './order/orderfilter.pipe';
+import { UserfilterPipe } from './user/userfilter.pipe';
 
 
 @NgModule({
@@ -75,7 +79,11 @@ import { PaginationControlsDirective } from './ng2paging/pagination-controls.dir
     RestownerfilterPipe,
     PaginatePipe,
     PaginationControlsComponent,
-    PaginationControlsDirective
+    PaginationControlsDirective,
+    AddreviewComponent,
+    RestaurantfilterPipe,
+    OrderfilterPipe,
+    UserfilterPipe
 
   ],
   imports: [

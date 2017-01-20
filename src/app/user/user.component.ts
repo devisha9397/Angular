@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { UserModel } from '../shared/user-model';
 import { UserdataService } from '../shared/userdata.service';
 
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -16,7 +17,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
 
-    this._user_data.getAllUser().subscribe(
+       this._user_data.getAllUser().subscribe(
 
       (data:UserModel[])=>{
         this.allUser=data;
@@ -37,23 +38,27 @@ export class UserComponent implements OnInit {
     (data:any)=>{
       this.allUser.splice(this.allUser.indexOf(item),1);
       alert('udi gayu');
-    }, 
+    },
       function(error){
         alert('vaat lagshe');
       },
       function(){
         console.log('badhu patyu');
       }
+      
   );
 
-  }
-  addUser()
+  } 
+    addUser(item:UserModel)
   {
-    this._router.navigate(['/addusers',0]);/////
+    this._router.navigate(['/addusers',0]);
   }
+  
 
-/*addUser(item:UserModel)
+ 
+/*updateUser(item:UserModel)
   {
-    this._router.navigate(['/addbooktables',0]);////
+    this._router.navigate(['/addusers',item.user_email]);////
   }*/
 }
+

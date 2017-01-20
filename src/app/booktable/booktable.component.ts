@@ -84,7 +84,7 @@ deleteBooktable(item:BooktableModel1){
     );
   
   }
- 
+  
   addBooktable(item:BooktableModel1)
   {
     this._router.navigate(['/addbooktables',0]);
@@ -98,5 +98,5 @@ deleteBooktable(item:BooktableModel1){
 
 
 
-}
+} 
  

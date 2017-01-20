@@ -9,7 +9,11 @@ import { CategorydataService } from '../shared/categorydata.service';
 })
 export class CategoryComponent implements OnInit {
 
+public categorytblarr:CategoryModel[]=[];
+ public delarr:CategoryModel[]=[];
+i:number=0;
 allCategory:CategoryModel[]=[];
+
   constructor( public _category_data:CategorydataService,public _router:Router) { }
 
   ngOnInit() {
@@ -46,6 +50,43 @@ allCategory:CategoryModel[]=[];
   );
 
   }
+
+  addarr(item:CategoryModel)
+  {
+    if(this.delarr.find(x=>x==item))
+    {
+      this.delarr.splice(this.delarr.indexOf(item),1);
+    }
+    else{
+      this.delarr.push(item);
+    }
+  }
+
+  deleteallCategory()
+  {
+    console.log("Deleteall");
+  this._category_data.deleteallCategory(this.delarr).subscribe(
+      (data:CategoryModel[])=>{
+          for(this.i=0;this.i<this.delarr.length;this.i++)
+          {
+            if(this.categorytblarr.find(x=>x==this.categorytblarr[this.i]))
+            {
+              this.categorytblarr.splice(this.categorytblarr.indexOf(this.delarr[this.i]),1);
+            }
+          }
+      },
+      function(error)
+      {
+        console.log(error);
+      },
+      function()
+      {
+        console.log("successfully delete");
+      }
+    );
+  
+  }
+
   addCategory(item:CategoryModel)
   {
     this._router.navigate(['/addcategories',0]);

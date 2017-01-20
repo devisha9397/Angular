@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { UserModel } from './user-model';
 import { Http,Response,RequestOptions,Headers } from '@angular/http';
 import 'rxjs/Rx'; 
-
+ 
 
 @Injectable()
 export class UserdataService {
@@ -16,7 +16,7 @@ getAllUser(){
 
 return this._http.get(this.url).map((res:Response)=>res.json());
 }
-
+ 
 getUserbyid(id:string){
 
 return this._http.get(this.url+id).map((res:Response)=>res.json());
@@ -28,7 +28,8 @@ let body=JSON.stringify(item);
 let header=new Headers({'Content-Type':'application/json'});
 let req=new RequestOptions({headers:header});
 return this._http.post(this.url,body,req).map((res:Response)=>res.json());
-}
+} 
+
 
 deleteUser(id:string){
 

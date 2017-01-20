@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ReviewModel } from '../shared/review-model';
+import { ReviewModel1 } from '../shared/review-model1';
 import { ReviewdataService } from '../shared/reviewdata.service';
 
 
@@ -10,15 +10,17 @@ import { ReviewdataService } from '../shared/reviewdata.service';
   styleUrls: ['./review.component.css']
 })
 export class ReviewComponent implements OnInit {
-allreview:ReviewModel[]=[];
+allreview:ReviewModel1[]=[];
   constructor(public _review_data:ReviewdataService,public _router:Router) { }
-
+ 
   ngOnInit() {
 
-    this._review_data.getAllReview().subscribe(
+     this._review_data.getreviewjoin().subscribe(
 
-      (data:ReviewModel[])=>{
+      (data:ReviewModel1[])=>{
+        console.log(data);
         this.allreview=data;
+        
       },
       function(error){
         alert('vaat lagshe');
@@ -28,10 +30,10 @@ allreview:ReviewModel[]=[];
       }
     );
   }
-  deleteReview(item:ReviewModel){
+  deleteReview(item:ReviewModel1){
 
   this._review_data.deleteReview(item.review_id).subscribe(
-
+ 
     (data:any)=>{
       this.allreview.splice(this.allreview.indexOf(item),1);
       alert('udi gayu');
@@ -44,5 +46,15 @@ allreview:ReviewModel[]=[];
       }
   );
 
+  }
+
+  addReview(item:ReviewModel1)
+  {
+    this._router.navigate(['/addreviews',0]);
+  }
+
+  updateReview(item:ReviewModel1)
+  {
+       this._router.navigate(['/addreviews',item.review_id]);
   }
 }
