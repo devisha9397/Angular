@@ -4,6 +4,7 @@ import { FavModels } from '../shared/fav-models';
 import { FavModel1 } from '../shared/fav-model1';
 import { FavdataService } from '../shared/favdata.service';
 
+
 @Component({
   selector: 'app-fav',
   templateUrl: './fav.component.html',
@@ -14,6 +15,23 @@ allFav:FavModel1[]=[];
   constructor(public _fav_data:FavdataService,public _router:Router) { }
 
   ngOnInit() {
+
+    
+       this._fav_data.getAllFav().subscribe(
+
+      (data:FavModel1[])=>{
+        this.allFav=data;
+      },
+      function(error){
+        alert('vaat lagshe');
+      },
+      function(){
+        console.log('badhu patyu');
+      }
+    ); 
+
+    
+
     /*this._fav_data.getFavjoin().subscribe(
 
       (data:FavModel1[])=>{

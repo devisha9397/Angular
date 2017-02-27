@@ -81,7 +81,7 @@ public order:OrderModel[]=[];
 addOrder(){
 if(this.order_id==0)
 {
-  this._order_data.addOrder(new OrderModel(this.order_id,this.fk_rest_id,this.fk_user_email,this.fk_item_id,this.quantity,this.total_amount,this.flag,this.date_of_order,this.delivery_area)).subscribe(
+  this._order_data.addOrder(new OrderModel(this.order_id,this.fk_rest_id,this.fk_user_email,this.fk_item_id,this.quantity,this.total_amount,0,this.date_of_order,this.delivery_area)).subscribe(
 
     (data:any)=>{
       alert('added');

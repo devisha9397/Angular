@@ -58,7 +58,7 @@ public discount:DiscountModel[]=[];
   }
   }
 
-addCategory(){
+addDiscount(){
 
   if(this.discount_id==0) 
     {
