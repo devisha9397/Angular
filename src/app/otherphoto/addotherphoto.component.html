@@ -1,0 +1,38 @@
+<app-header> </app-header>
+ <div *ngIf="other_id==0" >Add photo Here</div>
+  <div *ngIf="other_id!=0" >Edit photo Here</div>
+ 
+
+<form (ngSubmit)="addOtherphoto()">
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Select Restaurant:</span>
+  <!--<input type="number" name="fk_rest_id" [(ngModel)]="fk_rest_id" />-->
+  <select class="form-control" id="fk_rest_id" 
+[(ngModel)]="fk_rest_id" name="fk_rest_id"
+required>
+<option *ngFor="let s of rest" [value]="s.rest_id">{{s.rest_name}}</option>
+</select> 
+</div>
+
+
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter photo Image:</span>
+  <td><input type="file"  (change)="fileChange(input)" #input/></td>
+</div>
+<!--<div *ngFor="let file_src of file_srcs; let i = index">  -->
+  <img [attr.src]='file_srcs[0]' alt=""/>
+  
+  
+<!--</div>-->
+
+<br/>
+
+
+
+<div *ngIf="other_id==0"><button type="submit">Add other photo</button></div>
+<div *ngIf="other_id!=0"><button type="submit">Edit other photo</button></div>
+
+</form>
+

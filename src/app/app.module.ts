@@ -39,7 +39,7 @@ import { BooktablefilterPipe } from './booktable/booktablefilter.pipe';
 import { CategoryfilterPipe } from './category/categoryfilter.pipe';
 import { MenuitemfilterPipe } from './menuitem/menuitemfilter.pipe';
 import { RestownerfilterPipe } from './restowner/restownerfilter.pipe';
-
+import { MenuphotosdataService } from './shared/menuphotosdata.service';
 
 import { PaginatePipe } from './ng2paging/paginate.pipe';
 import { PaginationService } from './ng2paging/pagination.service';
@@ -48,7 +48,11 @@ import { PaginationControlsDirective } from './ng2paging/pagination-controls.dir
 import { RestaurantfilterPipe } from './restaurant/restaurantfilter.pipe';
 import { OrderfilterPipe } from './order/orderfilter.pipe';
 import { UserfilterPipe } from './user/userfilter.pipe';
-
+import { MenuphotoComponent } from './menuphoto/menuphoto.component';
+import { AddmenuphotoComponent } from './menuphoto/addmenuphoto.component';
+import { OtherphotodataService } from './shared/otherphotodata.service';
+import { OtherphotoComponent } from './otherphoto/otherphoto.component';
+import { AddotherphotoComponent } from './otherphoto/addotherphoto.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +87,11 @@ import { UserfilterPipe } from './user/userfilter.pipe';
     AddreviewComponent,
     RestaurantfilterPipe,
     OrderfilterPipe,
-    UserfilterPipe
+    UserfilterPipe,
+    MenuphotoComponent,
+    AddmenuphotoComponent,
+    OtherphotoComponent,
+    AddotherphotoComponent
 
   ],
   imports: [
@@ -92,7 +100,7 @@ import { UserfilterPipe } from './user/userfilter.pipe';
     HttpModule,
     Router
   ],
-  providers: [BooktabledataService,CategorydataService,MenuitemdataService,RestownerdataService,RestaurantdataService,UserdataService,OrderdataService,ReviewdataService,FavdataService,DiscountdataService,PaginationService],
+  providers: [BooktabledataService,CategorydataService,MenuitemdataService,RestownerdataService,RestaurantdataService,UserdataService,OrderdataService,ReviewdataService,FavdataService,DiscountdataService,PaginationService,MenuphotosdataService,OtherphotodataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

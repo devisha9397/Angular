@@ -19,6 +19,10 @@ import { FavComponent } from './fav/fav.component';
 import { AddfavComponent } from './fav/addfav.component';
 import { DiscountComponent } from './discount/discount.component';
 import { AdddiscountComponent } from './discount/adddiscount.component';
+import { MenuphotoComponent } from './menuphoto/menuphoto.component';
+import { AddmenuphotoComponent } from './menuphoto/addmenuphoto.component';
+import { OtherphotoComponent } from './otherphoto/otherphoto.component';
+import { AddotherphotoComponent } from './otherphoto/addotherphoto.component';
 
 
 const routing:Routes=[
@@ -43,7 +47,11 @@ const routing:Routes=[
     {path:'favs', component:FavComponent},
     {path:'addfavs/:fav_id', component:AddfavComponent},
     {path:'discounts', component:DiscountComponent},
-    {path:'adddiscounts/:discount_id', component:AdddiscountComponent}
+    {path:'adddiscounts/:discount_id', component:AdddiscountComponent},
+     {path:'menuphotos', component:MenuphotoComponent},
+    {path:'addmenuphotos/:menu_id', component:AddmenuphotoComponent},
+      {path:'otherphotos', component:OtherphotoComponent},
+    {path:'addotherphotos/:other_id', component:AddotherphotoComponent}
     ];
 
 export const Router=RouterModule.forRoot(routing);
