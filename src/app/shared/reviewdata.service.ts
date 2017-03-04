@@ -10,7 +10,7 @@ export class ReviewdataService {
  
   private url:string="http://localhost:3000/reviews/";
    private url1:string="http://localhost:3000/getreviewjoins/";
-
+private url2:string="http://localhost:3000/getreviewbyrestid/";
 
   constructor(public _http:Http) { }
   getAllReview(){
@@ -49,5 +49,9 @@ getreviewjoin()
 {
     return this._http.get(this.url1).map((res:Response)=>res.json());
 }
+
+getReviewByRestId(review_id:number){
+    return this._http.get(this.url2+review_id).map((res:Response)=>res.json());
+  }
 
 }

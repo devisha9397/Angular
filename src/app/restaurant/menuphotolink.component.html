@@ -1,0 +1,47 @@
+
+<app-header> </app-header>
+<br><br>
+<div class="col-md-12 col-sd-12" style="margin-left: 50px;">
+  <div class="col-md-9 col-sd-9">
+<div class="panel panel-primary" background-color=#080606>
+  <div class="panel-heading"><h3> {{rest_name}}</h3></div>
+  <div class="panel-body">
+
+
+    
+  <!--  <div><h4>Comment By : {{u_name}}</h4></div>-->
+<div>
+  <br/>
+<hr> 
+<table class="table">
+    <thead><tr>
+        <th>Menu pics : </th> 
+              <!--  <th>Delete</th> -->
+        
+        </tr></thead>
+
+<!--<tbody>-->
+     
+     
+        <!--<div class="row">-->
+  <div class="col-xs-6 col-md-3">
+    <tr *ngFor="let item of allmenuphotoid">
+    <div class="thumbnail">
+    <td> <img src="http://localhost:3000{{item.menupic_path}}"height="650px" width="650px"  alt="..."></td>
+    <br>
+</div>
+   </tr>
+</div>
+    
+<!--</tbody>-->
+  </table>
+
+      <!--<td><img src="http://localhost:3000{{item.menupic_path}} "   height="150px" width="150px"/></td>-->
+      
+       
+      
+       
+       
+    <!--    <td><button (click)="deleteDiscussion(item)"><span  class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+      -->  
+ 

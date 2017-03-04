@@ -8,6 +8,7 @@ export class MenuphotosdataService {
 
 private url:string="http://localhost:3000/menuphotos/";
 private url1:string="http://localhost:3000/getmenuphotojoins/";
+private url2:string="http://localhost:3000/getmenuphotojoinbyid/";
 
   constructor(public _http:Http) { }
 
@@ -61,6 +62,8 @@ getMenuphotojoin()
     return this._http.get(this.url1).map((res:Response)=>res.json());
 }
 
-
+getMenuphotojoinById(menu_id:number){
+    return this._http.get(this.url2+menu_id).map((res:Response)=>res.json());
+  }
 
 }

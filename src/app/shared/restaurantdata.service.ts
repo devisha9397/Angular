@@ -48,4 +48,10 @@ getRestaurantjoin()
 {
 return this._http.get(this.url1).map((res:Response)=>res.json());
 }
+
+
+
+ getRestaurantjoinById(rest_id:number){
+  return this._http.get(this.url1+rest_id).map((res:Response)=>res.json());
+  }
 }

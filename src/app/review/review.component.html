@@ -7,6 +7,13 @@
 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
 </div>
 
+<div class="input-group">
+<br>
+<span class="input-group-addon" id="basic-addon1">Search </span>
+<input type="text" class="form-control" (keyup)="0" #search placeholder="Search here"
+aria-describedby="basic-addon1" style="width: 500px;">
+</div>
+
 </div>
 <table class="table">
     <tr>
@@ -17,7 +24,9 @@
       <th>review Date</th>
       
       </tr>
-    <tr *ngFor="let item of allreview">
+
+      
+    <tr *ngFor="let item of (allreview | reviewfilter:search.value | paginate: { itemsPerPage: 2, currentPage: page } )">
  <!-- <td>{{item.review_id}}</td>-->
    <td>{{item.fk_user_email}}</td>
   <td>{{item.fk_rest_id}}</td>
@@ -33,5 +42,9 @@
 
    </tr>
   </table>
+
+  <div class="has-text-centered">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
  </div>
 </div>

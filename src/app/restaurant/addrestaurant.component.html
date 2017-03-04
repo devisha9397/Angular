@@ -29,6 +29,12 @@ required>
 <option *ngFor="let s of allCat" [value]="s.cat_id">{{s.cusines}}</option>
 </select>
 </div>
+<br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter Owner email:</span>
+  <td><input type="text" name="fk_owner_email" [(ngModel)]="fk_owner_email"/></td>
+</div>
 <br/> 
 
 <!--<div class="input-group">
@@ -49,7 +55,8 @@ required>
 
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter restaurant address:</span>
-  <td><input type="text" name="rest_add" [(ngModel)]="rest_add"/></td>
+  <td><textarea rows="4" cols="50" name="rest_add" [(ngModel)]="rest_add"></textarea>
+  
 </div>
 <br/>
 

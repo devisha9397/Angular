@@ -69,12 +69,13 @@
 
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1"> Profile pic:</span>
- <!-- <td><input type="file" (change)="fileChange(input)" #input /></td>-->
-  <td><input type="text" name="pro_pic" [(ngModel)]="pro_pic"/></td>
+ <td><input type="file" (change)="fileChange(input)" #input /></td>
+ <!-- <td><input type="text" name="pro_pic" [(ngModel)]="pro_pic"/></td>-->
 </div>
-<!--<div *ngFor="let file_src of file_srcs; let i = index"> 
+<!--<div *ngFor="let file_src of file_srcs; let i = index"> -->
 <img [attr.src]='file_srcs[0]' alt=""/>
-</div>-->
+
+<!--</div>-->
 <br/>
 
 <div class="input-group">

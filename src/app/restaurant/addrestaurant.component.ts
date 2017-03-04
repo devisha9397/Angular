@@ -4,7 +4,7 @@ import { CategoryModel } from '../shared/category-model';
 import { CategorydataService } from '../shared/categorydata.service'; 
 import { RestaurantdataService } from '../shared/restaurantdata.service';
 import { Router,ActivatedRoute } from '@angular/router';
-import {Subscription} from 'rxjs/Rx';
+import { Subscription } from 'rxjs/Rx';
  
 
 @Component({
@@ -14,7 +14,7 @@ import {Subscription} from 'rxjs/Rx';
 })
 export class AddrestaurantComponent implements OnInit {
 
-allCat:CategoryModel[]=[];
+
 
 private rest_id:number;
 private fk_owner_email:string;
@@ -28,7 +28,7 @@ private rest_email:string;
 private opening_status:string;
 
 public restaurant:RestaurantModel[]=[];
-
+public allCat:CategoryModel[]=[];
   constructor(public _restaurant_data:RestaurantdataService,public _cat_data:CategorydataService,public _router:Router,public _acrouter:ActivatedRoute) { }
 
 
@@ -78,8 +78,8 @@ public restaurant:RestaurantModel[]=[];
   this._restaurant_data.addRestaurant(new RestaurantModel(this.rest_id,this.fk_owner_email,this.fk_cat_id,this.rest_name,this.rest_add,this.pincode,this.rest_number,this.rest_email,this.opening_status)).subscribe(
     (data:any)=>{
      alert('added');
-    
-      this._router.navigate(['/restaurants']);////
+     console.log(data);
+      this._router.navigate(['/restaurants']);
     },
     function(error)
     {
@@ -88,6 +88,7 @@ public restaurant:RestaurantModel[]=[];
     function()
     {
       console.log("book add");
+     
     }
   );
      } 

@@ -12,10 +12,10 @@ import { Subscription } from 'rxjs/Rx';
 }) 
 export class AdduserComponent implements OnInit {
 
- /*   path='';
+    path='';
    public file_srcs: string[] = [];
   public debug_size_before: string[] = [];
-  public debug_size_after: string[] = [];*/
+  public debug_size_after: string[] = [];
 
 private user_email:string;
 private user_name:string;
@@ -33,7 +33,7 @@ private type:string;
 
 constructor(public _user_data:UserdataService,public _router:Router,public _acrouter:ActivatedRoute,private changeDetectorRef: ChangeDetectorRef) { }
 
-/*fileChange(input){
+fileChange(input){
   this.readFiles(input.files);
 }
 readFile(file, reader, callback){
@@ -115,7 +115,7 @@ resize(img, MAX_WIDTH:number, MAX_HEIGHT:number, callback){
     // callback with the results
     callback(dataUrl, img.src.length, dataUrl.length);
   };
-}*/
+}
 
   ngOnInit() {
      this._subscription=this._acrouter.params.subscribe(
@@ -125,7 +125,7 @@ resize(img, MAX_WIDTH:number, MAX_HEIGHT:number, callback){
       }
     );
 
-  /*if(this.user_email!='0'){
+  if(this.user_email!='0'){
 
     this._user_data.getUserbyid(this.user_email).subscribe(
 (data:UserModel[])=>{
@@ -148,13 +148,13 @@ resize(img, MAX_WIDTH:number, MAX_HEIGHT:number, callback){
 
   );
 
-  } */
+  } 
   }
 
   addUser(){
    // if(this.user_email=='0') 
     
-this._user_data.addUser(new UserModel(this.user_email,this.user_name,this.password,this.address,this.mobile_no,this.gender,this.city,this.pro_pic,this.DOB,this.type)).subscribe(
+this._user_data.addUser(new UserModel(this.user_email,this.user_name,this.password,this.address,this.mobile_no,this.gender,this.city,this.pro_pic,this.DOB,"user")).subscribe(
     (data:any)=>{
     alert('added');
     

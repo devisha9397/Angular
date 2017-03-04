@@ -53,6 +53,9 @@ import { AddmenuphotoComponent } from './menuphoto/addmenuphoto.component';
 import { OtherphotodataService } from './shared/otherphotodata.service';
 import { OtherphotoComponent } from './otherphoto/otherphoto.component';
 import { AddotherphotoComponent } from './otherphoto/addotherphoto.component';
+import { ReviewlinkComponent } from './restaurant/reviewlink.component';
+import { MenuphotolinkComponent } from './restaurant/menuphotolink.component';
+import { ReviewfilterPipe } from './review/reviewfilter.pipe';
 
 @NgModule({
   declarations: [
@@ -91,7 +94,10 @@ import { AddotherphotoComponent } from './otherphoto/addotherphoto.component';
     MenuphotoComponent,
     AddmenuphotoComponent,
     OtherphotoComponent,
-    AddotherphotoComponent
+    AddotherphotoComponent,
+    ReviewlinkComponent,
+    MenuphotolinkComponent,
+    ReviewfilterPipe
 
   ],
   imports: [

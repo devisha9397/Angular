@@ -23,7 +23,8 @@ import { MenuphotoComponent } from './menuphoto/menuphoto.component';
 import { AddmenuphotoComponent } from './menuphoto/addmenuphoto.component';
 import { OtherphotoComponent } from './otherphoto/otherphoto.component';
 import { AddotherphotoComponent } from './otherphoto/addotherphoto.component';
-
+import { ReviewlinkComponent } from './restaurant/reviewlink.component';
+import { MenuphotolinkComponent } from './restaurant/menuphotolink.component';
 
 const routing:Routes=[
 
@@ -37,6 +38,7 @@ const routing:Routes=[
     {path:'restowners', component:RestownerComponent},
     {path:'addrestowners/:owner_email', component:AddrestownerComponent},
     {path:'restaurants', component:RestaurantComponent},
+
     {path:'addrestaurants/:rest_id', component:AddrestaurantComponent},
     {path:'users', component:UserComponent}, 
      {path:'addusers/:user_email', component:AdduserComponent},
@@ -51,7 +53,11 @@ const routing:Routes=[
      {path:'menuphotos', component:MenuphotoComponent},
     {path:'addmenuphotos/:menu_id', component:AddmenuphotoComponent},
       {path:'otherphotos', component:OtherphotoComponent},
-    {path:'addotherphotos/:other_id', component:AddotherphotoComponent}
+    {path:'addotherphotos/:other_id', component:AddotherphotoComponent},
+    {path:'reviewlink/:rest_id', component:ReviewlinkComponent},
+    {path:'menuphotolink/:rest_id', component:MenuphotolinkComponent}
+    
+    
     ];
 
 export const Router=RouterModule.forRoot(routing);

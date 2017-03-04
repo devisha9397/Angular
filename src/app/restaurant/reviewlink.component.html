@@ -1,0 +1,70 @@
+<app-header> </app-header>
+<div class="col-md-12 col-sd-12" style="margin-left: 320px;">
+  <div class="col-md-6 col-sd-6">
+<div class="panel panel-success" background-color=#080606>
+  <div class="panel-heading"><h3> {{rest_name}}</h3></div>
+  <div class="panel-body">
+
+    <div><h4>Address : {{rest_add}}</h4></div>
+    
+  <!--  <div><h4>Comment By : {{u_name}}</h4></div>-->
+<div>
+  <br/>
+<hr> 
+<table class="table">
+    <thead><tr>
+        <th>Review By</th> 
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review</th>
+        <th>&nbsp;Date</th>
+      <!--  <th>Delete</th> -->
+        
+        </tr></thead>
+
+<tbody>
+  <br>
+     <tr *ngFor="let item of allreviewbyid">
+      
+       <td><img src="http://localhost:3000{{item.pro_pic}} " class="img-circle"  height="70px" width="70px"/>      <!-- {{item.u_pic}}  for pic  -->
+        &nbsp;&nbsp;&nbsp;{{item.user_name}}</td>      
+       <td>&nbsp;{{item.review_message}}&nbsp;&nbsp; </td>
+       <td>&nbsp;{{item.review_date}}&nbsp;&nbsp;&nbsp;</td>
+       
+       <td><button (click)='deleteReview(item)' type="button" class="btn btn-danger">
+        
+<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td><br><br><br><br><br>
+
+       
+       
+    <!--    <td><button (click)="deleteDiscussion(item)"><span  class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+      -->  
+<br><br>    
+  </tr>
+ 
+</tbody>
+  </table>
+  <!--<div class="panel panel-success" background-color="blue">
+<div class="panel-heading"><h3>Add your Answer here</h3></div></div>
+  <textarea rows="7" cols="70" [(ngModel)]="ans_desc">
+  </textarea>
+<input type="text" name="fk_email_id" [(ngModel)]="fk_email_id" paceholder="user email" />
+<br>
+
+<input type="text" name="ans_img" [(ngModel)]="ans_img" paceholder="img" />
+<br>
+
+<input type="text" name="ans_img1" [(ngModel)]="ans_img1" paceholder="img" />
+<br>
+  <br><br>
+<!-- Single button -->
+<!--<div class="btn-group">
+  <button type="button" (click)="addAnswer()" class="btn btn-info"  aria-haspopup="true" aria-expanded="false">
+    Add
+  </button>
+  </div>
+  </div>-->
+
+
+  
+
+
+  

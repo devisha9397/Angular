@@ -14,6 +14,14 @@ export class RestaurantComponent implements OnInit {
 allrest:RestaurantModel1[]=[];
   constructor(public _rest_data:RestaurantdataService,public _router:Router) { }
 
+rev(item:RestaurantModel1){
+    this._router.navigate(['/reviewlink',item.rest_id]);
+  }
+
+  menu(item:RestaurantModel1){
+    this._router.navigate(['/menuphotolink',item.rest_id]);
+  }
+
   ngOnInit() {
  
     this._rest_data.getRestaurantjoin().subscribe(
@@ -51,7 +59,7 @@ allrest:RestaurantModel1[]=[];
  
   addRestaurant(item:RestaurantModel1)
   {
-    this._router.navigate(['/addrestaurants',0]);//////
+    this._router.navigate(['/addrestaurants',0]);
   }
 updateRestaurant(item:RestaurantModel1) 
   {
