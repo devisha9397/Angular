@@ -15,7 +15,8 @@
 <hr> 
 <table class="table">
     <thead><tr>
-        <th>Menu pics : </th> 
+        <th>Other Photos </th> 
+        <br>
               <!--  <th>Delete</th> -->
         
         </tr></thead>
@@ -25,9 +26,9 @@
      
         <!--<div class="row">-->
   <div class="col-xs-6 col-md-3">
-    <tr *ngFor="let item of allmenuphotoid">
+    <tr *ngFor="let item of allotherphotoid">
     <div class="thumbnail">
-    <td><img src="http://localhost:3000{{item.menupic_path}}"height="650px" width="650px"  alt="..."></td>
+    <td><img src="http://localhost:3000{{item.otherpic_path}}"height="650px" width="650px"  alt="..."></td>
     <br>
 </div>
    </tr>

@@ -8,6 +8,7 @@ export class OtherphotodataService {
 
 private url:string="http://localhost:3000/otherphotos/";
 private url1:string="http://localhost:3000/getotherphotojoins/";
+private url2:string="http://localhost:3000/getotherphotojoinbyid/";
 
   constructor(public _http:Http) { }
 
@@ -60,5 +61,8 @@ getOtherphotojoin()
     return this._http.get(this.url1).map((res:Response)=>res.json());
 }
 
+getOtherphotojoinById(other_id:number){
+    return this._http.get(this.url2+other_id).map((res:Response)=>res.json());
+  }
 
 }

@@ -19,6 +19,7 @@
   <span class="input-group-addon" id="basic-addon1">Enter fk_owner email:</span>
   <td><input type="text" name="fk_owner_email" [(ngModel)]="fk_owner_email" /></td>
 </div>
+
 <br/>-->
 
 <div class="input-group">
@@ -33,7 +34,7 @@ required>
 
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter Owner email:</span>
-  <td><input type="text" name="fk_owner_email" [(ngModel)]="fk_owner_email"/></td>
+  <td><input type="text" name="owner_email" [(ngModel)]="owner_email"/></td>
 </div>
 <br/> 
 
@@ -52,6 +53,19 @@ required>
   <td><input type="text" name="rest_name" [(ngModel)]="rest_name"/></td>
 </div>
 <br/>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter Restaurant Image:</span>
+  <td><input type="file"  (change)="fileChange(input)" #input/></td>
+</div>
+<!--<div *ngFor="let file_src of file_srcs; let i = index">  -->
+  <img [attr.src]='file_srcs[0]' alt=""/>
+  
+  
+<!--</div>-->
+
+<br/>
+
 
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Enter restaurant address:</span>

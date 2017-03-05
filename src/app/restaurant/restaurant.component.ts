@@ -22,6 +22,10 @@ rev(item:RestaurantModel1){
     this._router.navigate(['/menuphotolink',item.rest_id]);
   }
 
+otherphoto(item:RestaurantModel1){
+    this._router.navigate(['/otherphotolink',item.rest_id]);
+  }
+
   ngOnInit() {
  
     this._rest_data.getRestaurantjoin().subscribe(

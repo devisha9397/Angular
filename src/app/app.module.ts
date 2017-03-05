@@ -56,6 +56,7 @@ import { AddotherphotoComponent } from './otherphoto/addotherphoto.component';
 import { ReviewlinkComponent } from './restaurant/reviewlink.component';
 import { MenuphotolinkComponent } from './restaurant/menuphotolink.component';
 import { ReviewfilterPipe } from './review/reviewfilter.pipe';
+import { OtherphotolinkComponent } from './restaurant/otherphotolink.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +98,8 @@ import { ReviewfilterPipe } from './review/reviewfilter.pipe';
     AddotherphotoComponent,
     ReviewlinkComponent,
     MenuphotolinkComponent,
-    ReviewfilterPipe
+    ReviewfilterPipe,
+    OtherphotolinkComponent
 
   ],
   imports: [

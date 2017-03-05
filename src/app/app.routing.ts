@@ -25,6 +25,7 @@ import { OtherphotoComponent } from './otherphoto/otherphoto.component';
 import { AddotherphotoComponent } from './otherphoto/addotherphoto.component';
 import { ReviewlinkComponent } from './restaurant/reviewlink.component';
 import { MenuphotolinkComponent } from './restaurant/menuphotolink.component';
+import { OtherphotolinkComponent } from './restaurant/otherphotolink.component';
 
 const routing:Routes=[
 
@@ -55,7 +56,8 @@ const routing:Routes=[
       {path:'otherphotos', component:OtherphotoComponent},
     {path:'addotherphotos/:other_id', component:AddotherphotoComponent},
     {path:'reviewlink/:rest_id', component:ReviewlinkComponent},
-    {path:'menuphotolink/:rest_id', component:MenuphotolinkComponent}
+    {path:'menuphotolink/:rest_id', component:MenuphotolinkComponent},
+    {path:'otherphotolink/:rest_id', component:OtherphotolinkComponent}
     
     
     ];
